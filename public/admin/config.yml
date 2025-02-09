@@ -26,10 +26,10 @@ collections:
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     fields: # The fields for each document, usually in front matter
-      - { label: "Layout", name: "layout", widget: "hidden", default: "../../../layouts/blog.astro" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "../../../../layouts/blog.astro" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Classifica", name: "thumbnail", widget: "file" } 
 
 media_folder: "public/images/uploads" # Media files will be stored in the repo under static/images/uploads
-public_folder: "/images/uploads" 
+public_folder: "images/uploads" 
