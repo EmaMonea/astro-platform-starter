@@ -1,10 +1,4 @@
 ---
-import '../../src/styles/globals.css';
-import '@fontsource/inter/400.css';
-import '@fontsource/inter/800.css';
-import interFont400 from '@fontsource/inter/files/inter-latin-400-normal.woff2?url';
-import interFont800 from '@fontsource/inter/files/inter-latin-800-normal.woff2?url';
-
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
@@ -22,19 +16,7 @@ const { title } = Astro.props;
         <title>{title}</title>
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="preload" as="font" type="font/woff2" href={interFont400} crossorigin />
-        <link rel="preload" as="font" type="font/woff2" href={interFont800} crossorigin />
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
     </head>
-    <body class="antialiased text-white bg-[#355C7D]">
-        <div class="flex flex-col min-h-screen px-6 bg-grid-pattern sm:px-12">
-            <div class="flex flex-col w-full max-w-5xl mx-auto grow">
-                <Header />
-                <main class="grow"><slot /></main>
-                <Footer />
-            </div>
-        </div>
-    </body>
+    <body> </body>
 </html>
