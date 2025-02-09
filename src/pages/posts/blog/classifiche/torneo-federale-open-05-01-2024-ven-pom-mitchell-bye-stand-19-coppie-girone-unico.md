@@ -1,5 +1,5 @@
 ---
-layout: ../../../layouts/blog.astro
+layout: ../../../classifiche.astro
 title: Torneo Federale Open - 05/01/2024 Ven pom Mitchell bye-stand - 19 coppie
   - Girone unico
 date: 2025-02-10T00:13:00.000Z
