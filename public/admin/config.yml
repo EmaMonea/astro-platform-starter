@@ -19,7 +19,7 @@ collections:
       - { label: "Body", name: "body", widget: "markdown" } 
 
   - name: "classifiche" # Used in routes, e.g., /admin/collections/blog
-    layout: "layouts/blog.astro"
+    layout: "pages/classifiche.astro"
     preview_path: "posts" # Optional: path to the folder where the documents are stored
     label: "Classifiche" # Used in the UI
     folder: "src/pages/posts/blog/classifiche" # The path to the folder where the documents are stored
