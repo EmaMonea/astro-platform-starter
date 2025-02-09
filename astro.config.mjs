@@ -12,5 +12,7 @@ export default defineConfig({
         })
     ],
     output: 'hybrid',
-    adapter: netlify()
+    adapter: netlify(),
+    site: 'https://provaastro.netlify.app',        
+          
 });
