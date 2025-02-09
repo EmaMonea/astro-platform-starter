@@ -24,12 +24,13 @@ Any page or data can be rebuilt only when needed, without site visitors ever get
 <Layout title="Welcome to Astro.">
     <main>
         <h2>Main component</h2>
+        <section>
         {             
             posts.map((post) =>( 
-                <div><a href={`${post.url}`}>{post.frontmatter.title}</a></div>
+                <div class="post"><a href={`${post.url}`} >{post.frontmatter.title}</a></div>
             ))
         }
-        
+        </section>
     </main>
     
 </Layout>
@@ -37,5 +38,15 @@ Any page or data can be rebuilt only when needed, without site visitors ever get
     main {
         height: 70%;
         background-color: aliceblue;
+    }
+    .post{
+        padding:5px;
+        margin:5px;
+        border-radius: 5px;
+        color:black;
+        background-color: lightblue
+    }
+    section{
+        max-width:300px;
     }
 </style>
