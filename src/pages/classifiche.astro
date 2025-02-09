@@ -2,12 +2,26 @@
 import Layout from '../layouts/Layout.astro';
 import ContextAlert from '../components/ContextAlert.astro';
 import Markdown from '../components/Markdown.astro';
+import fs from 'fs';
+import path from 'path';
+import Papa from 'papaparse';
 
 const classifica = Object.values(import.meta.glob('./posts/blog/classifiche/*.md', { eager: true }));
+const csvPaths = classifica.map((item) => item.frontmatter.thumbnail);
 
-for (let i = 0; i < posts.length; i++) {
-    console.log(posts[i]);
-}
+const tables = csvPaths.map((csvPath) => {
+    const content = fs.readFileSync(path.join(process.cwd(), 'public', csvPath), 'utf-8');
+    const fileName = path.basename(csvPath, '.csv');
+    return {
+        title: fileName,
+        data: Papa.parse(content, {
+            header: true,
+            delimiter: ',',
+            skipEmptyLines: true
+        }).data
+    };
+});
+
 
 /*const matchFrontMatter = matches.frontmatter;
 const { title } = matchFrontMatter.title;*/
@@ -23,13 +37,41 @@ Any page or data can be rebuilt only when needed, without site visitors ever get
     <main>
         <h2>Main component</h2>
         <section>
-            {posts.map((post) => <div class="post">{post.frontmatter.title}</div>)}
+            {
+                tables.map((table) => {
+                    return(
+                        <h3>{table.title}</h3>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Pos</th>
+                                <th>Giocatore 1</th>
+                                <th>Giocatore 2</th>
+                                <th>%</th>
+                                <th>Punti</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {table.data.map((row:any) => (
+                                <tr>
+                                <td>{row.Pos}</td>
+                                <td>{row.Classifica}</td>
+                                <td>{row['']}</td>
+                                <td>{row['%']}</td>
+                                <td>{row.Punti}</td>
+                                </tr>
+                            ))}
+                            </tbody>
+                        </table>
+                    )
+                })
+            }
         </section>
     </main>
 </Layout>
 <style>
     main {
-        height: 70%;
+        min-height: 70%;
         background-color: aliceblue;
     }
     .post {

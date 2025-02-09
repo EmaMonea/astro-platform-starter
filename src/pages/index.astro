@@ -3,9 +3,10 @@ import Layout from '../layouts/Layout.astro';
 
 const posts = Object.values(import.meta.glob('./posts/blog/*.md', { eager: true }));
 
-for (let i = 0; i < posts.length; i++) {
+/*for (let i = 0; i < posts.length; i++) {
     console.log(posts[i]);
 }
+*/
 
 /*const matchFrontMatter = matches.frontmatter;
 const { title } = matchFrontMatter.title;*/
