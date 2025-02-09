@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import ContextAlert from '../components/ContextAlert.astro';
 import Markdown from '../components/Markdown.astro';
 
-const classifica = Object.values(import.meta.glob('./posts/blog//classifiche/*.md', { eager: true }));
+const classifica = Object.values(import.meta.glob('./posts/blog/classifiche/*.md', { eager: true }));
 
 for (let i = 0; i < posts.length; i++) {
     console.log(posts[i]);
@@ -23,13 +23,7 @@ Any page or data can be rebuilt only when needed, without site visitors ever get
     <main>
         <h2>Main component</h2>
         <section>
-            {
-                posts.map((post) => (
-                    <div class="post">
-                        <a href={`${post.url}`}>{post.frontmatter.title}</a>
-                    </div>
-                ))
-            }
+            {posts.map((post) => <div class="post">{post.frontmatter.title}</div>)}
         </section>
     </main>
 </Layout>
