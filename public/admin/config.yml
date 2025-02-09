@@ -4,6 +4,7 @@ backend:
 
 collections:
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    layout: "layouts/blog.astro"
     preview_path: "posts" # Optional: path to the folder where the documents are stored
     label: "Blog" # Used in the UI
     folder: "src/pages/posts/blog" # The path to the folder where the documents are stored
