@@ -1,40 +1,16 @@
 ---
-const navItems = [
-    { linkText: 'Home', href: '/' },
-    { linkText: 'Classifiche', href: '/classifiche' },
-    { linkText: 'Chi siamo', href: '/chi_siamo' }
-];
+
 ---
 
 <header>
-    <h2>Header component</h2>
-    <nav class="nav">
-        {
-            !!navItems?.length && (
-                <ul class="nav-list">
-                    {navItems.map((item) => (
-                        <li>
-                            <a href={item.href} class="nav-list-items">
-                                {item.linkText}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            )
-        }
+    <img src="" alt="" />
+    <nav>
+        <ul>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+            <li><a href=""></a></li>
+        </ul>
     </nav>
 </header>
-<style>
-    header {
-        height: 15%;
-        width: 100%;
-        background-color: lightblue;
-    }
-    .nav-list {
-        display: flex;
-        list-style: none;
-    }
-    .nav-list-items {
-        padding-left: 20px;
-    }
-</style>
+<style></style>
