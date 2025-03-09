@@ -1,13 +1,14 @@
 ---
 //imports
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 const { frontmatter } = Astro.props;
-
 ---
+
 <Header />
 <h1>{frontmatter.title}</h1>
 <p>Written {frontmatter.date}</p>
 <slot />
 
 <div>Visita altre guide!</div>
-
+<Footer />
